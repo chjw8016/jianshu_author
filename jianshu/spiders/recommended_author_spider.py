@@ -37,4 +37,4 @@ class RecommendedAuthorSpider(scrapy.Spider):
         item["words"] = info_html[3]
         item["likes"] = info_html[4]
         item["link"] = "http://www.jianshu.com" + response.xpath('//a[@class="name"]/@href').extract()[0]
-        return item
+        yield item
